@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="gameFlow.css">
+        <script src="gameFlow.js"></script> 
+    </head>
+    <body>
+
+        <div>
+            <img class="court" src="https://www.ynet.co.il/PicServer4/2014/11/22/5711405/57114020991981490169no.jpg">
+        </div>
+        <div>
+            <div class="headline">
+            </div>
+
+        <div class="buttons">
+            <button class="addbutton" onclick="addImageHapoel()" id="hapoel"> ADD SOLIDER </button>
+            
+            <button onclick="prepareForFight()" id="fight"> FIGHT </button>
+            
+            <button class="addbutton" onclick="addImageMaccabi()" id="maccabi"> ADD SOLIDER </button>
+        </div>
+
+        <div id="result">
+           
+
+        </div>
+        <div class="currHapoelContainer">
+            <p class="lifeHTA"> HP- <b class="hpHTA"> 100 </b> </p>
+            <p class="damageHTA"> DAMAGE TAKEN - <b class="damageTakenHTA"> 0 </b> </p>
+        </div> 
+        <div class="currMaccabiContainer">
+            <p class="lifeMTA"> HP-  <b class="hpMTA"> 100 </b> </p>
+            <p class="damageMTA"> DAMAGE TAKEN - <b class="damageTakenMTA"> 0 </b> </p>
+        </div>
+
+        <div class="both">
+            <div id="solidersHTA">
+            </div>
+            <div id="solidersMTA">
+            </div>
+            <div id="currHapoel"> </div>
+            <div id="currMaccabi">  </div>
+        </div>
+
+        </div>
+        <div class="containerMenu">
+            <a class="menuLink" href="openingScreen.html">
+                <button class="menu"> BACK TO THE MENU </button>
+            </a>
+        </div>
+        
+    </body>
+</html>

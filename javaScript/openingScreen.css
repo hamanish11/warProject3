@@ -1,0 +1,71 @@
+body{
+    background-color: grey;
+
+}
+.court{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.headline{
+    display: flex;
+    justify-content: center;
+}
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 50px;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.img{
+    display: flex;
+    justify-content: center;
+}
+.fans{
+    height: 450px;
+    width: 850px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 40px;
+}
+.start {
+    background-color: black; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    border-radius: 5%;
+    text-align: center;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.8s;
+    margin-bottom: 100px;
+    margin-left: 120px;
+    margin-right: 20px;
+}
+.start:hover{
+    background-color: white; 
+    color: black;
+}
+.pic{
+    transition-duration: 1.8s;
+}
+.pic:hover{
+    rotate: 360deg;
+}
+@keyframes cuurFight{
+    from{
+        transform: translateX(-400px);
+    }
+
+    to{
+        transform: translateX(0);
+    }
+}

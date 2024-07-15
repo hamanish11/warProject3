@@ -1,0 +1,263 @@
+body{
+    background-color: grey;
+    
+}
+.court{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.headline{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+#hapoel {
+    background-color: red; 
+    border: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 15px 32px;
+    border-radius: 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.8s;
+    margin-bottom: 100px;
+    margin-right: 20px;
+    transition: 1.8s;
+}
+#hapoel:hover{
+    background-color: white;
+    color: red;
+}
+
+#fight{
+    background-color: white; 
+    border: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 15px 32px;
+    border-radius: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 1.8s;
+    margin-bottom: 100px;
+    margin-right: 20px;
+}
+#fight:hover{
+    background-color: black;
+    color: white;
+}
+
+#maccabi {
+    background-color: yellow; 
+    border: none;
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 15px 32px;
+    border-radius: 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.8s;
+    margin-bottom: 100px;
+    margin-left: 120px;
+    margin-right: 20px;
+    transition: 0.8s;
+}
+#maccabi:hover{
+    background-color: blue;
+    color: yellow;
+}
+#result{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    -webkit-text-stroke: 2px black; 
+    display: flex;
+    justify-content: center;
+}
+.both{
+    display: flex;
+    position:relative;
+
+}
+#solidersHTA{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+#solidersMTA{
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right:0; 
+    bottom: 0;
+    position:absolute;
+    cursor: pointer;
+}
+.currHapoelContainer{
+    position: relative;
+}
+.lifeHTA{
+    margin-top: 100px;
+    position: absolute;
+    top: -40px; 
+    left: 420px; 
+    color: white;
+    display: inline-block;
+}
+.hpHTA{
+    color: red;
+    font-size: 20px;
+}
+.damageHTA{
+    margin-top: 100px;
+    position: absolute;
+    top: -20px; 
+    left: 420px;
+    color: white;
+}
+.damageTakenHTA{
+    color: yellow;
+}
+.currMaccabiContainer{
+    position: relative;
+    background-color: blue;
+}
+.hpMTA{
+    color: yellow;
+    font-size: 20px;
+}
+.lifeMTA{
+    margin-top: 100px;
+    position: absolute;
+    top: -40px; 
+    right: 420px; 
+    color: white;
+}
+.damageMTA{
+    margin-top: 100px;
+    position: absolute;
+    top: -20px; 
+    right: 420px;
+    color: white;
+}
+.damageTakenMTA{
+    color: red;
+}
+
+#currHapoel{
+    width: 210px;
+    height: 210px;
+    margin-top: 100px;
+    position: absolute;
+    top: 20px; 
+    left: 420px; 
+    border-width: 15px;
+    border-style: solid;
+    border-color: rgb(246, 10, 10);
+    cursor: pointer;
+
+}
+#currHapoel:hover{
+    background-color: white;
+}
+
+
+#currMaccabi{
+    width: 210px;
+    height: 210px;
+    margin-top: 100px;
+    position: absolute;
+    top: 20px; 
+    right: 420px; 
+    border-width: 15px;
+    border-style: solid;
+    border-color: rgb(255, 242, 0);
+    cursor: pointer;
+
+}
+#currMaccabi:hover{
+    background-color: blue;
+}
+.containerMenu{
+    display: flex;
+    justify-content: center;
+}
+.menuLink{
+    height: 0px;
+}
+.menu{
+    background-color: black; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    border-radius: 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.8s;
+    margin-top: 400px;
+}
+.menu:hover{
+    background-color: white; 
+    color: black;
+}
+@keyframes moveRight{
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(480px);
+    }
+}
+@keyframes moveLeft{
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(-480px);
+    }
+}
+.moveHapoel{
+    animation-name: moveRight;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+.moveMaccabi{
+    animation-name: moveLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+

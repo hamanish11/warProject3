@@ -1,0 +1,19 @@
+@keyframes slideLeft{
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(300px);
+    }
+}
+.a{
+    animation-name: slideLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+
+    
+}

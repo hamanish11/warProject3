@@ -1,6 +1,6 @@
 body{
     background-color: grey;
-
+    font-size: 16px;
 }
 .court{
     position: absolute;
@@ -15,7 +15,7 @@ body{
 h1{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    font-size: 50px;
+    font-size: 4em
 }
 .buttons{
     display: flex;
@@ -26,29 +26,28 @@ h1{
     justify-content: center;
 }
 .fans{
-    height: 450px;
-    width: 850px;
+    height: 25em;
+    width: 80em;
     object-fit: cover;
     display: block;
-    margin-bottom: 40px;
+    margin-bottom: 2em;
 }
 .start {
     background-color: black; 
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 0.9em 2em;
     border-radius: 5%;
     text-align: center;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
     display: inline-block;
-    font-size: 16px;
     cursor: pointer;
     transition: 0.8s;
-    margin-bottom: 100px;
-    margin-left: 120px;
-    margin-right: 20px;
+    margin-bottom: 6em;
+    margin-left: 7em;
+    margin-right: 1.2em;
 }
 .start:hover{
     background-color: white; 

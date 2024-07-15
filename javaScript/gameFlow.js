@@ -13,20 +13,24 @@ let intervalMTADmg = null;
 let shouldIntervalStoppedHTA = false;
 let shouldIntervalStoppedMTA = false;
 let won = false;
+const hapoelPlayers = [
+  { name: "ginat", rating: 88, img: 'images/ginat2.png'},
+  { name: "timor", rating: 83, img: 'images/timor2.png'},
+  { name: "munford", rating: 87, img: 'images/munford2.png'}
+];
+const maccabiPlayers = [
+  { name: "dibartolomeo", rating: 82, img:'images/german2.png'},
+  { name: "blatt", rating: 85, img:'images/blatt2.png' },
+  { name: "rivero", rating: 86, img:'images/rivero2.png'}
+];
 function addImageHapoel() {
     var container = document.getElementById('solidersHTA');
     var imgElement = document.createElement('img');
     let result = document.getElementById('result');
-    let number = Math.random();
-    if(number<0.333){
-      imgElement.src = 'images/ginat2.png';
-    } else if(number>=0.333 && number< 0.666){
-      imgElement.src = 'images/munford2.png';
-    } else{
-      imgElement.src = 'images/timor2.png';
-    }
-    imgElement.alt = 'hapoel number' + countHapoel;
-    imgElement.id = 'hapoel number' + countHapoel;
+    const player = hapoelPlayers[Math.floor(Math.random() * hapoelPlayers.length)];
+    imgElement.src = player.img;
+    imgElement.alt = player.rating;
+    imgElement.id = `hapoel number ${countHapoel}`;
     imgElement.width = 200;
     imgElement.height = 180;
     container.appendChild(imgElement);
@@ -47,16 +51,10 @@ function addImageMaccabi() {
     var container = document.getElementById('solidersMTA');
     var imgElement = document.createElement("img");
     let result = document.getElementById('result');
-    let number = Math.random();
-    if(number<0.333){
-      imgElement.src = 'images/german2.png';
-    } else if(number>=0.333 && number< 0.666){
-      imgElement.src = 'images/blatt2.png';
-    } else{
-      imgElement.src = 'images/rivero2.png';
-    }
-    imgElement.alt = 'germans number' + countGeramns;
-    imgElement.id = 'germans number' + countGeramns;
+    const player = maccabiPlayers[Math.floor(Math.random() * maccabiPlayers.length)];
+    imgElement.src = player.img;
+    imgElement.alt = player.rating;
+    imgElement.id = `germans number ${countGeramns}`;
     imgElement.width = 200;
     imgElement.height = 180;
     container.appendChild(imgElement);
@@ -186,10 +184,12 @@ function prepareForFight() {
 function fight(){
   var container = document.getElementById('result');
   container.innerHTML= "";
-  let winning = Math.random();
-    if(winning > 0.5){
-      let container1 = document.getElementById('currHapoel');
-      let imgHapoel = container1.querySelector('img');
+  let container1 = document.getElementById('currHapoel');
+  let imgHapoel = container1.querySelector('img');
+  let container2 = document.getElementById('currMaccabi');
+  let imgMaccabi = container2.querySelector('img'); 
+    if(imgMaccabi.alt > imgHapoel.alt){
+      
     
       if (imgHapoel) {
         imgHapoel.parentNode.removeChild(imgHapoel);
@@ -198,9 +198,8 @@ function fight(){
       }
       container.innerHTML += 'MACCABI WON THIS ROUND';
     }
-    else{
-      let container2 = document.getElementById('currMaccabi');
-      let imgMaccabi = container2.querySelector('img'); 
+    else if(imgHapoel.alt > imgMaccabi.alt){
+      
     
       if (imgMaccabi) {
         imgMaccabi.parentNode.removeChild(imgMaccabi);
@@ -208,6 +207,25 @@ function fight(){
         countGeramns--;
       }
       container.innerHTML += 'HAPOEL WON THIS ROUND';
+    }
+    else{
+      let random = Math.random();
+      if(random>=0&&random<=0.5){
+        if (imgMaccabi) {
+          imgMaccabi.parentNode.removeChild(imgMaccabi);
+          currentMTA--;
+          countGeramns--;
+        }
+        container.innerHTML += 'HAPOEL WON THIS ROUND';
+      }
+      else{
+        if (imgHapoel) {
+          imgHapoel.parentNode.removeChild(imgHapoel);
+          currentHTA--;
+          countHapoel--;
+        }
+        container.innerHTML += 'MACCABI WON THIS ROUND';
+      }
     }
     counterHTADamage=0;
     counterMTADamage=0;

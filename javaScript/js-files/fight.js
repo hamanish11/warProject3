@@ -4,7 +4,7 @@ function prepareForFight() {
     container.innerHTML = "PLEASE ADD PLAYERS TO THE CENTER OF THE ARENA, THE ARENA IS EMPTY!";
   } else if (won == true) {
     container.innerHTML = "CAN'T FIGHT, THE BATTLE IS OVER";
-  } else if (countGeramns == 0) {
+  } else if (countMaccabi == 0) {
     won = true;
     container.innerHTML = "CONGRATS, HAPOEL WON THE GAME!";
   } else if (countHapoel == 0) {
@@ -15,12 +15,18 @@ function prepareForFight() {
   } else {
     shouldIntervalStoppedHTA = false;
     shouldIntervalStoppedMTA = false;
-    movementHTA();
-    movementMTA();
-    intervalHTAHP = setInterval(updateCounterHTAlife, 30);
-    intervalMTAHP = setInterval(updateCounterMTAlife, 30);
+    movement('currHapoel', 'moveHapoel');
+    movement('currMaccabi', 'moveMaccabi');
+    intervalHTAHP = setInterval(updateCounterHTAlife,30);
+    intervalMTAHP = setInterval(updateCounterMTAlife,30);
     intervalHTADmg = setInterval(updateCounterDamageHTA, 30);
     intervalMTADmg = setInterval(updateCounterDamageMTA, 30);
+    setTimeout(function() {
+      clearInterval(intervalHTAHP);
+      clearInterval(intervalMTAHP);
+      clearInterval(intervalHTADmg);
+      clearInterval(intervalMTADmg);
+    }, 2500);
     setTimeout(fight, 2500);
   }
 }
@@ -44,27 +50,28 @@ function fight() {
     if (imgMaccabi) {
       imgMaccabi.parentNode.removeChild(imgMaccabi);
       currentMTA--;
-      countGeramns--;
+      countMaccabi--;
     }
     container.innerHTML += 'HAPOEL WON THIS ROUND';
-  } else {
-    let random = Math.random();
-    if (random >= 0 && random <= 0.5) {
-      if (imgMaccabi) {
-        imgMaccabi.parentNode.removeChild(imgMaccabi);
-        currentMTA--;
-        countGeramns--;
-      }
-      container.innerHTML += 'HAPOEL WON THIS ROUND';
-    } else {
-      if (imgHapoel) {
-        imgHapoel.parentNode.removeChild(imgHapoel);
-        currentHTA--;
-        countHapoel--;
-      }
-      container.innerHTML += 'MACCABI WON THIS ROUND';
-    }
-  }
+   }
+  //   else {
+  // //   let random = Math.random();
+  // //   if (random >= 0 && random <= 0.5) {
+  // //     if (imgMaccabi) {
+  // //       imgMaccabi.parentNode.removeChild(imgMaccabi);
+  // //       currentMTA--;
+  // //       countMaccabi--;
+  // //     }
+  // //     container.innerHTML += 'HAPOEL WON THIS ROUND';
+  // //   } else {
+  // //     if (imgHapoel) {
+  // //       imgHapoel.parentNode.removeChild(imgHapoel);
+  // //       currentHTA--;
+  // //       countHapoel--;
+  // //     }
+  // //     container.innerHTML += 'MACCABI WON THIS ROUND';
+  // //   }
+  // }
 
   counterHTADamage = 0;
   counterMTADamage = 0;

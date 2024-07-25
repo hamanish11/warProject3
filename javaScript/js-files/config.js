@@ -1,5 +1,5 @@
 let countHapoel = 0;
-let countGeramns = 0;
+let countMaccabi = 0;
 let currentHTA = 0;
 let currentMTA = 0;
 let counterHTAHP = 100;

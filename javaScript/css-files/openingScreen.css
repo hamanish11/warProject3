@@ -26,17 +26,17 @@ h1{
     justify-content: center;
 }
 .fans{
-    height: 25em;
-    width: 80em;
+    height: 36em;
+    width: 128em;
     object-fit: cover;
     display: block;
     margin-bottom: 2em;
 }
 .start {
-    background-color: black; 
+    background-color: white; 
     border: none;
-    color: white;
-    padding: 0.9em 2em;
+    color: black;
+    padding:4em 75em;
     border-radius: 5%;
     text-align: center;
     text-decoration: none;
@@ -48,10 +48,16 @@ h1{
     margin-bottom: 6em;
     margin-left: 7em;
     margin-right: 1.2em;
+    animation: blink 1s infinite;
 }
-.start:hover{
-    background-color: white; 
-    color: black;
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.arrow{
+    height: 20em;
 }
 .pic{
     transition-duration: 1.8s;
@@ -61,7 +67,7 @@ h1{
 }
 @keyframes cuurFight{
     from{
-        transform: translateX(-400px);
+        transform: translateX(-25em);
     }
 
     to{

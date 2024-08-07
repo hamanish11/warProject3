@@ -1,6 +1,8 @@
 body{
-    background-color: grey;
+    background-color: rgb(128, 128, 128);
     font-size: 16px;
+    height: 900px;
+    z-index: 0;
 }
 canvas {
     position: absolute; 
@@ -8,11 +10,60 @@ canvas {
     left: 0; 
     width: 100%; 
     height: 100%; 
-    background: transparent; /* Set canvas background to transparent */
-    pointer-events: none; /* Prevent interaction with the canvas */
-    z-index: 0; /* Place behind other elements */
+    background: transparent; 
+    pointer-events: none; 
+    z-index: 2; 
+}
+.message-container {
+    position: relative; /* Ensure it contains its absolutely positioned children */
+    margin-bottom: 50px; /* Adjust as needed to create space from elements below */
+}
+#result {
+    position: absolute; /* Ensures both elements can overlap in the exact same position */
+    top: 6em; /* Adjust as needed */
+    left: 0; /* Adjust as needed */
+    width: 100%; /* Ensure they cover the same width */
+    height: 3.25em; /* Same height to overlap perfectly */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    color: #ffffff;
+    text-shadow: 0 0 0.625em #ffffff, 0 0 1.25em #ffffff, 0 0 1.875em #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.625em;
+    border-radius: 0.5em;
+    box-shadow: 0 0 0.9375em rgba(0, 0, 0, 0.7);
+}
+#stats {
+    position: fixed;                   /* Fixes the position relative to the viewport */
+    top: 56%;                          /* Center vertically */
+    left: 50%;                         /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for exact centering */
+    width: 35em;                       /* Set a fixed width */
+    height: 20em;                      /* Set a fixed height */
+    margin: 0;                         /* Remove default margins */
+    padding: 1em;                      /* Add padding if needed */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    color: #ffffff;
+    text-shadow: 0 0 0.625em #ffffff, 0 0 1.25em #ffffff, 0 0 1.875em #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.5em;
+    box-shadow: 0 0 0.9375em rgba(0, 0, 0, 0.7);
+    z-index: 2;                        /* Ensure it stays on top of other elements */
+    overflow: auto;                    /* Adds scrollbars if content exceeds dimensions */
 }
 
+#result {
+    z-index: 2; /* Higher value to appear on top */
+}
+.belowMessage{
+    margin-top: 7em;
+}
 .court{
     position: absolute;
     width: 100%;
@@ -28,7 +79,9 @@ canvas {
     display: flex;
     justify-content: space-between;
 }
-
+.plus{
+    height: 4em;
+}
 #hapoel {
     background-color: red; 
     border: none;
@@ -59,20 +112,24 @@ canvas {
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    padding: 15px 32px;
+    width: 12em;
+    padding: 1em 2em;
     border-radius: 100%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1em;
     cursor: pointer;
     transition: 1.8s;
-    margin-bottom: 100px;
-    margin-right: 20px;
+    margin-bottom: 6.25em;
+    margin-right: 1.25em;
 }
 #fight:hover{
     background-color: black;
     color: white;
+}
+.swords{
+    height: 4em;
 }
 
 #maccabi {
@@ -98,15 +155,7 @@ canvas {
     background-color: blue;
     color: yellow;
 }
-#result{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 1.8em;
-    color: white;
-    -webkit-text-stroke: 0.0975em black; 
-    display: flex;
-    justify-content: center;
-}
+
 .both{
     display: flex;
     position:relative;
@@ -133,7 +182,7 @@ canvas {
     margin-top: 6.25em;
     position: absolute;
     top: -2.5em; 
-    left: 26.25em; 
+    left: 29.5em; 
     color: white;
     display: inline-block;
 }
@@ -144,8 +193,8 @@ canvas {
 .damageHTA{
     margin-top: 6.25em;
     position: absolute;
-    top: -1.25em; 
-    left: 26.25em;
+    top: -1em; 
+    left: 29.5em;
     color: white;
 }
 .damageTakenHTA{
@@ -163,14 +212,14 @@ canvas {
     margin-top: 6.25em;
     position: absolute;
     top: -2.5em; 
-    right: 26.25em; 
+    right: 35em; 
     color: white;
 }
 .damageMTA{
     margin-top: 6.25em;
     position: absolute;
-    top: -1.25em; 
-    right: 26.25em;
+    top: -1em; 
+    left: 118em;
     color: white;
 }
 .damageTakenMTA{
@@ -212,16 +261,19 @@ canvas {
     background-color: blue;
 }
 .containerMenu{
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    position: fixed; 
+    bottom: 1.25em; 
+    left: 50%; 
+    transform: translateX(-50%);
 }
 .menuLink{
     height: 0em;
 }
 .menu{
-    background-color: black; 
+    background-color: white; 
     border: none;
-    color: white;
+    color: black;
     padding: 0.9375em 2em;
     border-radius: 5%;
     text-align: center;
@@ -235,15 +287,18 @@ canvas {
     margin-top: 25em;
 }
 .menu:hover{
-    background-color: white; 
-    color: black;
+    background-color: black; 
+    color: white;
+}
+.home{
+    height: 4em;
 }
 @keyframes moveRight{
     from{
         transform: translateX(0em);
     }
     to{
-        transform: translateX(30em);
+        transform: translateX(35em);
     }
 }
 @keyframes moveLeft{
@@ -251,7 +306,7 @@ canvas {
         transform: translateX(0em);
     }
     to{
-        transform: translateX(-30em);
+        transform: translateX(-35em);
     }
 }
 .moveHapoel{

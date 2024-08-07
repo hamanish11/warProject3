@@ -1,0 +1,161 @@
+
+.addbutton {
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 0.9em 2em;
+    border-radius: 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.8s;
+    margin-bottom: 12em;
+    width: 14em;
+}
+.return{
+    height: 2.5em;
+}
+.returnMaccabi{
+    height: 2.5em;
+    transform: rotate(180deg); 
+}
+.boxing{
+    height: 2.5em;
+    width: 4em;
+}
+.trash{
+    height: 2.5em;
+}
+#hapoelInfo-remove {
+    background-color: red; 
+    color: white;
+}
+
+#hapoelInfo-select {
+    background-color: red; 
+    color: white;
+}
+
+#hapoelInfo-remove-fight {
+    background-color: red; 
+    color: white;
+}
+
+#hapoelInfo-remove:hover,
+#hapoelInfo-select:hover,
+#hapoelInfo-remove-fight:hover {
+    background-color: white;
+    color: red;
+}
+
+#maccabiInfo-remove {
+    background-color: yellow; 
+    color: blue;
+}
+
+#maccabiInfo-select {
+    background-color: yellow; 
+    color: blue;
+}
+
+#maccabiInfo-remove-fight {
+    background-color: yellow; 
+    color: blue;
+}
+
+#maccabiInfo-remove:hover,
+#maccabiInfo-select:hover,
+#maccabiInfo-remove-fight:hover {
+    background-color: blue;
+    color: yellow;
+}
+
+.playerInformation {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 15em;
+    height: 40.625em;
+    border-radius: 0.9em;
+    display: none;
+    box-shadow: 0 0 0.9375em rgba(0, 0, 0, 0.7);
+}
+
+#hapoelPlayerInformation {
+    top: 0;
+    left: 12em; 
+    bottom: 0;
+    position: absolute;
+    opacity: 1;
+    color: red;
+    visibility: visible;
+    z-index: 5;
+}
+
+#maccabiPlayerInformation {
+    top: 0;
+    right: 12em; 
+    bottom: 0;
+    position: absolute;
+    color: yellow;
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+}
+
+.img-hover {
+    transition: transform 0.3s ease; 
+}
+
+.img-hover:hover {
+    transform: scale(1.2); 
+}
+
+.info-container img {
+    transition: transform 0.3s ease; 
+}
+
+.info-container:hover img,
+.info-container:hover .player-info {
+    transform: scale(1.2); 
+}
+
+.descriptionMaccabi {
+    font-size: 1.2em;
+    margin-bottom: 1.25em;
+    color: yellow;
+}
+.descriptionHapoel {
+    font-size: 1.2em;
+    margin-bottom: 1.25em;
+    color: red;
+}
+.rating {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+strong {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.addbutton.red-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 1.2em 2em;
+    cursor: pointer;
+}
+
+.addbutton.yellow-button {
+    background-color: yellow;
+    color: black;
+    border: none;
+    padding: 1.2em 2em;
+    cursor: pointer;
+}
+
+.addbutton:hover {
+    opacity: 0.8;
+}

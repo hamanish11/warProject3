@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="gameFlow.css">
-        <!-- <script src="gameFlow.js"></script> 
-        <script src="fireworks1.js"></script> -->
-        <script src="js-files/players.js"></script>
-        <script src="js-files/fight.js"></script>
-        <script src="js-files/movement.js"></script>
-        <script src="js-files/fireworks.js"></script>
-        <script src="js-files/main-js.js"></script>
-        <script src="js-files/counters.js"></script>
-        <script src="js-files/config.js"></script>
-        <!-- <script src="js-files/imageHandlers.js"></script> -->
-        <script src="js-files/img-hand.js"></script>
+        <link rel="stylesheet" href="css-files/gameFlow.css">
+        <link rel="stylesheet" href="css-files/imagesHover.css">
+        
 
     </head>
     <body>
     <canvas id="fireworksCanvas"></canvas>
     <div class="containerGame">
         <div>
-            <img class="court" src="https://www.ynet.co.il/PicServer4/2014/11/22/5711405/57114020991981490169no.jpg">
+            <img class="court" src="images/court.jpg">
         </div>
-        <div>
             <div class="headline">
             </div>
 
         <div class="buttons">
-            <button class="addbutton" onclick="addImageHapoel()" id="hapoel"> ADD SOLIDER </button>
+            <button class="addbutton" id='hapoel'>
+                <img class="plus" src="images/plus.png">
+            </button>
+    
+            <button id="fight"> 
+                <img class="swords" src="images/swords.webp">
+            </button>
             
-            <button onclick="prepareForFight()" id="fight"> FIGHT </button>
-            
-            <button class="addbutton" onclick="addImageMaccabi()" id="maccabi"> ADD SOLIDER </button>
+            <button class="addbutton" id='maccabi'>
+                <img class="plus" src="images/plus.png">
+            </button>
+        </div>
+        <div class="message">
+            <div id="result"> </div>
         </div>
 
-        <div id="result">
-           
-
-        </div>
-        <div class="currHapoelContainer">
-            <p class="lifeHTA"> HP- <b class="hpHTA"> 100 </b> </p>
-            <p class="damageHTA"> DAMAGE TAKEN - <b class="damageTakenHTA"> 0 </b> </p>
-        </div> 
-        <div class="currMaccabiContainer">
-            <p class="lifeMTA"> HP-  <b class="hpMTA"> 100 </b> </p>
-            <p class="damageMTA"> DAMAGE TAKEN - <b class="damageTakenMTA"> 0 </b> </p>
-        </div>
-
-        <div class="both">
-            <div id="solidersHTA">
+        <div class="belowMessage">
+            <div class="currHapoelContainer">
+                <p class="lifeHTA"> HP- <b class="hpHTA"> 100 </b> </p>
+                <p class="damageHTA"> DAMAGE TAKEN - <b class="damageTakenHTA"> 0 </b> </p>
+            </div> 
+            <div class="currMaccabiContainer">
+                <p class="lifeMTA"> HP-  <b class="hpMTA"> 100 </b> </p>
+                <p class="damageMTA"> DAMAGE TAKEN - <b class="damageTakenMTA"> 0 </b> </p>
             </div>
-            <div id="solidersMTA">
+          
+    
+            <div class="both">
+                <div id="solidersHTA">
+                </div>
+                <div id="solidersMTA"> 
+                </div>
+                <div id="hapoelPlayerInformation" class="playerInformation"></div>
+                <div id="maccabiPlayerInformation" class="playerInformation"></div>
+                <div id="currHapoel"> </div>
+                <div id="statsContainer">
+                    <div id="stats"> </div>
+                </div>
+                <div id="currMaccabi"> </div>
             </div>
-            <div id="currHapoel"> </div>
-            <div id="currMaccabi">  </div>
+    
+            <div class="containerMenu">
+                <a class="menuLink" href="openingScreen.html">
+                    <button class="menu"> 
+                        <img class="home" src="images/home.png">
+                    </button>
+                </a>
+            </div>
         </div>
-
-        </div>
-        <div class="containerMenu">
-            <a class="menuLink" href="openingScreen.html">
-                <button class="menu"> BACK TO THE MENU </button>
-            </a>
-        </div>
+        
     </div>
+    <script type="module" src="js-files/main-js.js"></script>
     </body>
 </html>

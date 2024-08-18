@@ -63,10 +63,10 @@ export function prepareForFight() {
       movement('currHapoel', 'moveHapoel');
       movement('currMaccabi', 'moveMaccabi');
       
-      setIntervalHTAHP(setInterval(updateCounterHTAlife, 30));
-      setIntervalMTAHP(setInterval(updateCounterMTAlife, 30));
-      setIntervalHTADmg(setInterval(updateCounterDamageHTA, 30));
-      setIntervalMTADmg(setInterval(updateCounterDamageMTA, 30));
+      setIntervalHTAHP(setInterval(updateCounterHTAlife, 130));
+      setIntervalMTAHP(setInterval(updateCounterMTAlife, 130));
+      setIntervalHTADmg(setInterval(updateCounterDamageHTA, 130));
+      setIntervalMTADmg(setInterval(updateCounterDamageMTA, 130));
       
       setTimeout(() => {
           clearInterval(getIntervalHTAHP());
@@ -95,12 +95,14 @@ export function fight() {
 
   if (imgMaccabi && imgHapoel) {
       if (imgMaccabi.alt > imgHapoel.alt) {
-          imgHapoel.parentNode.removeChild(imgHapoel);
+        //   imgHapoel.parentNode.removeChild(imgHapoel);
+          container1.innerHTML = "";
           setCurrentHTA(getCurrentHTA() - 1);
           setCountHapoel(getCountHapoel() - 1);
           container.innerHTML += 'MACCABI WON THIS ROUND';
       } else if (imgHapoel.alt > imgMaccabi.alt) {
-          imgMaccabi.parentNode.removeChild(imgMaccabi);
+        //   imgMaccabi.parentNode.removeChild(imgMaccabi);
+          container2.innerHTML = "";
           setCurrentMTA(getCurrentMTA() - 1);
           setCountMaccabi(getCountMaccabi() - 1);
           container.innerHTML += 'HAPOEL WON THIS ROUND';

@@ -73,12 +73,11 @@
 }
 
 .playerInformation {
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 15em;
-    height: 40.625em;
+    background-color: rgba(248, 243, 243, 0.5);
+    width: 14em;
+    height: 39.625em;
     border-radius: 0.9em;
     display: none;
-    box-shadow: 0 0 0.9375em rgba(0, 0, 0, 0.7);
 }
 
 #hapoelPlayerInformation {
@@ -108,7 +107,11 @@
 }
 
 .img-hover:hover {
-    transform: scale(1.2); 
+    transform: scale(1.2);
+    filter: brightness(1.5); /* Increase brightness */
+}
+.containerGame:hover::before {
+    opacity: 0; /* Remove the dark overlay */
 }
 
 .info-container img {
@@ -120,18 +123,42 @@
     transform: scale(1.2); 
 }
 
+
+
+
+.headlineInformation{
+    display: flex;
+    justify-content: center;
+}
+.hapoelLogo{
+    height: 8em;
+}
+.maccabiLogo{
+    height: 8em;
+}
+.playerHover{
+    height: 8em;
+}
+.logos{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
 .descriptionMaccabi {
-    font-size: 1.2em;
+    font-size: 1em;
     margin-bottom: 1.25em;
     color: yellow;
 }
 .descriptionHapoel {
-    font-size: 1.2em;
+    font-size: 1em;
     margin-bottom: 1.25em;
     color: red;
 }
 .rating {
-    font-size: 3em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
@@ -159,3 +186,42 @@ strong {
 .addbutton:hover {
     opacity: 0.8;
 }
+
+
+.image-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 10px;
+}
+
+.image-container img {
+    margin-right: 10px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 5em;
+    border-radius: 25%;
+}
+
+.button-container button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.button-container img {
+    width: 20px;
+    height: 20px;
+}
+.red-button-container {
+    background-color: red;
+  }
+  
+  .yellow-button-container {
+    background-color: yellow;
+  }

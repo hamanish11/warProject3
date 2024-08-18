@@ -6,7 +6,7 @@ export const hapoelPlayers = [
             Standing at <em>6 ft 8 in (2.03 m)</em>, he primarily plays at the <strong>power forward</strong> position. 
             Ginat was named the <span class="highlight">Israeli League Rising Star</span> in 2017.
         ` },
-    { name: "timor", rating: 83, img: 'images/timor2.png', hoverText: 'Bar Timor Rating : 83 Bar Timor (born March 2, 1992) is an Israeli professional basketball player, who plays for Hapoel Tel Aviv of the Israeli Basketball Premier League and the Israeli national team. click on the player to pick him' },
+    { name: "timor", rating: 83, img: 'images/timor info 2.png', hoverText: 'Bar Timor Rating : 83 Bar Timor (born March 2, 1992) is an Israeli professional basketball player, who plays for Hapoel Tel Aviv of the Israeli Basketball Premier League and the Israeli national team. click on the player to pick him' },
     { name: "munford", rating: 87, img: 'images/munford2.png', hoverText: 'Xavier Munford Rating : 87 Xavier Tyler Jerome Munford (born June 1, 1992) is an American professional basketball player for Hapoel Tel Aviv of the Israeli Basketball Premier League. He played two seasons of college basketball for the Rhode Island Rams. click on the player to pick him'}
 ];
 

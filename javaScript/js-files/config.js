@@ -80,7 +80,7 @@ export function getCounterMTAHP() { return counterMTAHP; }
 export function setCounterMTAHP(value) { counterMTAHP = value; }
 
 export function getCounterHTADamage() { return counterHTADamage; }
-export function setCounterHTADamage(value) { counterHTADamage = value; }
+export function setCounterHTADamage(value) { console.log("setCounter"); counterHTADamage = value; }
 
 export function getCounterMTADamage() { return counterMTADamage; }
 export function setCounterMTADamage(value) { counterMTADamage = value; }

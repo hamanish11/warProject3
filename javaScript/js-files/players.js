@@ -1,5 +1,5 @@
 export const hapoelPlayers = [
-    { name: "ginat", rating: 88, img: 'images/ginat2.png', hoverText: `
+    { name: "ginat", rating: 88, img: 'images/ginat5.png', hoverText: `
             <strong>Tomar Ginat</strong><br>
             <span class="rating">Rating: 88</span><br>
             Tomer Ginat (born November 7, 1994) is an Israeli professional basketball player for Hapoel Tel Aviv of the Israeli Basketball Premier League. 

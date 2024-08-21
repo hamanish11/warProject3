@@ -17,10 +17,6 @@
 .return{
     height: 2.5em;
 }
-.returnMaccabi{
-    height: 2.5em;
-    transform: rotate(180deg); 
-}
 .boxing{
     height: 2.5em;
     width: 4em;
@@ -104,14 +100,14 @@
 
 .img-hover {
     transition: transform 0.3s ease; 
+    
 }
-
 .img-hover:hover {
-    transform: scale(1.2);
-    filter: brightness(1.5); /* Increase brightness */
+    transform: scale(1.1);
+    filter: brightness(1.5); 
 }
 .containerGame:hover::before {
-    opacity: 0; /* Remove the dark overlay */
+    opacity: 0; 
 }
 
 .info-container img {
@@ -171,7 +167,6 @@ strong {
     background-color: red;
     color: white;
     border: none;
-    padding: 1.2em 2em;
     cursor: pointer;
 }
 
@@ -179,7 +174,6 @@ strong {
     background-color: yellow;
     color: black;
     border: none;
-    padding: 1.2em 2em;
     cursor: pointer;
 }
 
@@ -192,19 +186,23 @@ strong {
     display: flex;
     align-items: center;
     position: relative;
-    margin: 10px;
+    margin: 0.625em;
 }
 
 .image-container img {
-    margin-right: 10px;
+    margin-right: 0.625em;
 }
 
 .button-container {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 2em;
     width: 5em;
-    border-radius: 25%;
+    border-style: solid;
+    border-color: white;
+}
+.image-container:hover .button-container {
+    display: flex; 
 }
 
 .button-container button {
@@ -212,16 +210,85 @@ strong {
     border: none;
     cursor: pointer;
     border-radius: 50%;
+    transition: 0.8s;
 }
 
+
 .button-container img {
-    width: 20px;
-    height: 20px;
+    width: 1.25em;
+    height: 1.25em;
 }
 .red-button-container {
     background-color: red;
   }
   
+  
   .yellow-button-container {
     background-color: yellow;
   }
+  .addedbuttons:hover{
+    scale: 1.5;
+  }
+
+  .rotate-maccabi {
+    transform: rotate(180deg); 
+}
+
+.no-rotation {
+    transform: rotate(0deg); 
+    transition: transform 0.3s ease; 
+}
+.button-separator{
+    margin: -1.5em;
+    display: inline-block;
+    padding-left: 1.35em;
+}
+
+.right-of-player {
+    margin-left: 1em;
+    margin-top: 1em; 
+}
+
+
+.left-of-player {
+    position: absolute;
+    top: 0;
+    right: 95%; 
+    margin-right: 1em;
+    margin-top: 1em;
+}
+
+.image-container img {
+    margin: 0; 
+}
+
+.buttonimage.return-maccabi-class {
+    transform: rotate(180deg); 
+}
+
+
+.button-div{
+    /* border-style: solid;
+    border-color: black; */
+    padding-left: 1.3em;
+    transition: 0.8s;
+}
+.button-div:hover{
+    background-color: antiquewhite;
+}
+
+.button-container.selected {
+    flex-direction: row;
+    gap: 2em;
+    width: 15em;
+    margin-top: 1em;
+    border-style: solid;
+    border-color: white;
+    position: absolute;
+    top: 100%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+.button-image{
+    padding-top: 0.7em;
+}

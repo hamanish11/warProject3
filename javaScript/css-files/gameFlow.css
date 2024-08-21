@@ -16,7 +16,7 @@ canvas {
 }
 .message-container {
     position: relative; 
-    margin-bottom: 50px; 
+    margin-bottom: 3.125em; 
 }
 #result {
     position: absolute; 
@@ -56,7 +56,6 @@ canvas {
     z-index: 2;                     
     overflow: auto;        
 }
-
 #result {
     z-index: 2; 
 }
@@ -104,7 +103,6 @@ canvas {
     background-color: white;
     color: red;
 }
-
 #fight{
     background-color: white; 
     border: none;
@@ -218,13 +216,12 @@ canvas {
     margin-top: 6.25em;
     position: absolute;
     top: -1em; 
-    left: 118em;
+    right: 30em;
     color: white;
 }
 .damageTakenMTA{
     color: red;
 }
-
 #currHapoel{
     width: 13.125em;
     height: 13.125em;
@@ -241,8 +238,6 @@ canvas {
 #currHapoel:hover{
     background-color: white;
 }
-
-
 #currMaccabi{
     width: 13.125em;
     height: 13.125em;
@@ -292,39 +287,4 @@ canvas {
 .home{
     height: 4em;
 }
-@keyframes moveRight{
-    from{
-        transform: translateX(0em);
-    }
-    to{
-        transform: translateX(35em);
-    }
-}
-@keyframes moveLeft{
-    from{
-        transform: translateX(0em);
-    }
-    to{
-        transform: translateX(-35em);
-    }
-}
-.moveHapoel{
-    animation-name: moveRight;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-in;
-    animation-delay: 1s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: none;
-}
-.moveMaccabi{
-    animation-name: moveLeft;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-in;
-    animation-delay: 1s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: none;
-}
-
 

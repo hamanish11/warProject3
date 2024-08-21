@@ -1,4 +1,3 @@
-
 import {
   getCountHapoel,
   getCountMaccabi,
@@ -34,14 +33,14 @@ import {
   updateCounterHTAlife,
   updateCounterMTAlife,
   updateCounterDamageHTA,
-  updateCounterDamageMTA
+  updateCounterDamageMTA,
+  resetCounters
 } from './counters.js';
 import { startFireworks } from './fireworks.js';
 
-
-
 export function prepareForFight() {
   let container = document.getElementById('result');
+  
   if (getCurrentHTA() === 0 && getCurrentMTA() === 0 && !getWon()) {
       container.innerHTML = "PLEASE ADD PLAYERS TO THE CENTER OF THE ARENA, THE ARENA IS EMPTY!";
   } else if (getWon()) {
@@ -58,15 +57,22 @@ export function prepareForFight() {
   } else if (getCurrentHTA() === 0 || getCurrentMTA() === 0) {
       container.innerHTML = "PLAYER FROM THE OTHER SIDE IS MISSING....";
   } else {
+      resetCounters();
+      
+      clearInterval(getIntervalHTAHP());
+      clearInterval(getIntervalMTAHP());
+      clearInterval(getIntervalHTADmg());
+      clearInterval(getIntervalMTADmg());
+      
+      setIntervalHTAHP(setInterval(updateCounterHTAlife, 20));
+      setIntervalMTAHP(setInterval(updateCounterMTAlife, 20));
+      setIntervalHTADmg(setInterval(updateCounterDamageHTA, 20));
+      setIntervalMTADmg(setInterval(updateCounterDamageMTA, 20));
+      
       setShouldIntervalStoppedHTA(false);
       setShouldIntervalStoppedMTA(false);
       movement('currHapoel', 'moveHapoel');
       movement('currMaccabi', 'moveMaccabi');
-      
-      setIntervalHTAHP(setInterval(updateCounterHTAlife, 130));
-      setIntervalMTAHP(setInterval(updateCounterMTAlife, 130));
-      setIntervalHTADmg(setInterval(updateCounterDamageHTA, 130));
-      setIntervalMTADmg(setInterval(updateCounterDamageMTA, 130));
       
       setTimeout(() => {
           clearInterval(getIntervalHTAHP());
@@ -95,13 +101,11 @@ export function fight() {
 
   if (imgMaccabi && imgHapoel) {
       if (imgMaccabi.alt > imgHapoel.alt) {
-        //   imgHapoel.parentNode.removeChild(imgHapoel);
           container1.innerHTML = "";
           setCurrentHTA(getCurrentHTA() - 1);
           setCountHapoel(getCountHapoel() - 1);
           container.innerHTML += 'MACCABI WON THIS ROUND';
       } else if (imgHapoel.alt > imgMaccabi.alt) {
-        //   imgMaccabi.parentNode.removeChild(imgMaccabi);
           container2.innerHTML = "";
           setCurrentMTA(getCurrentMTA() - 1);
           setCountMaccabi(getCountMaccabi() - 1);
@@ -109,15 +113,7 @@ export function fight() {
       }
   }
 
-  setCounterHTADamage(0);
-  setCounterMTADamage(0);
-  setCounterHTAHP(100);
-  setCounterMTAHP(100);
-
-  document.getElementsByClassName('damageTakenHTA')[0].textContent = getCounterHTADamage();
-  document.getElementsByClassName('damageTakenMTA')[0].textContent = getCounterMTADamage();
-  document.getElementsByClassName('hpHTA')[0].textContent = getCounterHTAHP();
-  document.getElementsByClassName('hpMTA')[0].textContent = getCounterMTAHP();
+  resetCounters();
 
   console.log('HTA HP Reset:', getCounterHTAHP());
   console.log('MTA HP Reset:', getCounterMTAHP());

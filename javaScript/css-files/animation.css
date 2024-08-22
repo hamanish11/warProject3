@@ -35,6 +35,7 @@
 .bin-class.button-image {
     height: 2em;
     width: 2em;
+    padding-right: 1em;
   }
   .select-player-class.button-image {
     height: 2em;
@@ -43,6 +44,8 @@
   .return-maccabi-class.button-image {
     height: 2em;
     width: 2em;
+    transform: rotate(180deg);
+    padding-bottom: 1em;
   }
   .return-hapoel-class.button-image {
     height: 2em;

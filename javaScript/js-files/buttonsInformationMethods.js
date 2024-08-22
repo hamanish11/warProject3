@@ -8,7 +8,6 @@ import {
     setCurrentHTA,
     setCurrentMTA,
 } from './config.js';
-
 export function removePlayer(imageId) {
     const imageContainer = document.getElementById(`container-${imageId}`);
     const result = document.getElementById('result');
@@ -45,6 +44,7 @@ export function removePlayer(imageId) {
     result.style.color = 'white'; 
 }
 
+
 const createSelectFromFight = () => {
     let doesHappen = false;
 
@@ -79,6 +79,28 @@ const createSelectFromFight = () => {
         const buttonContainer = imageContainer.querySelector('.button-container');
         buttonContainer.classList.add('selected');
         
+        const selectButtonDiv = buttonContainer.querySelector(`#selectPlayerDiv-${imageId}`);
+        if (selectButtonDiv) {
+            buttonContainer.removeChild(selectButtonDiv);
+            const returnButtonDiv = document.createElement('div');
+            returnButtonDiv.id = `returnFromFightDiv-${imageId}`;
+            returnButtonDiv.className = 'button-div';
+
+            const returnButton = document.createElement('button');
+            returnButton.id = `returnFromFightButton-${imageId}`;
+            returnButton.className = 'addedbuttons';
+
+            const returnImg = document.createElement('img');
+            returnImg.src = 'images/return.png';
+            returnImg.className = team === 'maccabi' ? 'return-maccabi-class button-image' : 'return-hapoel-class button-image';
+
+            returnButton.appendChild(returnImg);
+            returnButton.addEventListener('click', () => removeFromFight(imageId, team));
+            returnButtonDiv.appendChild(returnButton);
+
+            buttonContainer.appendChild(returnButtonDiv);
+        }
+
         setTimeout(() => {
             result.innerHTML = ''; 
         }, 5000);
@@ -86,9 +108,6 @@ const createSelectFromFight = () => {
 };
 
 export const selectPlayerToFight = createSelectFromFight();
-
-
-
 
 
 const createRemoveFromFight = () => {
@@ -123,6 +142,29 @@ const createRemoveFromFight = () => {
         }
         const buttonContainer = imageContainer.querySelector('.button-container');
         buttonContainer.classList.remove('selected');
+        
+        const returnButtonDiv = buttonContainer.querySelector(`#returnFromFightDiv-${playerId}`);
+        if (returnButtonDiv) {
+            buttonContainer.removeChild(returnButtonDiv);
+            const selectButtonDiv = document.createElement('div');
+            selectButtonDiv.id = `selectPlayerDiv-${playerId}`;
+            selectButtonDiv.className = 'button-div';
+
+            const selectButton = document.createElement('button');
+            selectButton.id = `selectButton-${playerId}`;
+            selectButton.className = 'addedbuttons';
+
+            const selectImg = document.createElement('img');
+            selectImg.src = 'images/swordtofight2.jpg';
+            selectImg.className = 'select-player-class button-image';
+
+            selectButton.appendChild(selectImg);
+            selectButton.addEventListener('click', () => selectPlayerToFight(playerId, team));
+            selectButtonDiv.appendChild(selectButton);
+
+            buttonContainer.appendChild(selectButtonDiv);
+        }
+
         result.style.color = 'white'; 
         doesHappen = true; 
 
@@ -133,3 +175,7 @@ const createRemoveFromFight = () => {
 };
 
 export const removeFromFight = createRemoveFromFight();
+
+
+
+

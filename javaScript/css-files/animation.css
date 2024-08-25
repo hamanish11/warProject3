@@ -32,6 +32,58 @@
     animation-direction: normal;
     animation-fill-mode: none;
 }
+.introduction{
+    background-color: white;
+    color: black;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    height: 35em;
+    width: 70em;
+    border-radius: 10%;
+    border-style: none;
+    margin-left: 37em;
+    margin-top: 8em;
+}
+.introductionText{
+    font-size: 3em;
+    font-weight: bold;
+    margin-left: 1em;
+}
+.introductionText span {
+    display: block; 
+}
+.welcome{
+    color: red;
+}
+.plusButton{
+    color: #b7b72d;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.closeButton{
+    border-radius: 40%;
+    color: white;
+    background-color: red;
+    height: 4em;
+    width: 8em;
+    cursor: pointer;
+    border-style: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 0.5em;
+    margin-top: 5em;
+    margin-left: 30%;
+    transition: 0.8s;
+}
+.closeButton:hover{
+    background-color: rgb(3, 3, 3);
+    color: red;
+    border-style: initial;
+    border-color: black;
+}
 .bin-class.button-image {
     height: 2em;
     width: 2em;

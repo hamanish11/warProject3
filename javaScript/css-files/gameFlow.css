@@ -42,7 +42,8 @@ canvas {
     top: 56%;                         
     left: 50%;                      
     transform: translate(-50%, -50%); 
-    width: 35em;                     
+    /* width: 35em;                      */
+    width: 40%;
     height: 20em;                    
     margin: 0;                       
     padding: 1em;                  

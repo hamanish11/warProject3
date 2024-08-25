@@ -26,7 +26,7 @@ h1{
     justify-content: center;
 }
 .fans{
-    height: 36em;
+    height: 26em;
     width: 128em;
     object-fit: cover;
     display: block;
@@ -49,6 +49,7 @@ h1{
     margin-left: 7em;
     margin-right: 1.2em;
     animation: blink 1s infinite;
+    width: 50%;
 }
 
 @keyframes blink {

@@ -179,3 +179,26 @@ export const removeFromFight = createRemoveFromFight();
 
 
 
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the close button and the introduction div
+    var closeButton = document.querySelector('.closeButton');
+    var introductionDiv = document.querySelector('.introduction');
+
+    // Check if elements are found
+    if (closeButton && introductionDiv) {
+        // Add click event listener to the button
+        closeButton.addEventListener('click', function() {
+            // Hide the introduction div
+            introductionDiv.style.display = 'none';
+        });
+    } else {
+        console.error('Required elements not found.');
+    }
+});
+
+
+

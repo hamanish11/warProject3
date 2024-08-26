@@ -23,28 +23,24 @@ import { selectPlayerToFight,
                 result.innerHTML = ''; 
             }, 5000);
             return; 
-        }
-        else if (getWon()) {
+        } else if (getWon()) {
             result.innerHTML = "CAN'T ADD MORE PLAYERS, BATTLE IS OVER";
             setTimeout(() => {
                 result.innerHTML = ''; 
             }, 5000);
             return; 
         }
-    
         const uniqueId = `${team}-${Date.now()}-${Math.floor(Math.random() * 10000)}`;
         const imgElement = document.createElement('img');
         const player = playersArray[Math.floor(Math.random() * playersArray.length)];
         imgElement.src = player.img;
         imgElement.alt = player.rating;
-        imgElement.id = uniqueId; 
+        imgElement.id = uniqueId;
         imgElement.width = 200;
         imgElement.height = 180;
         imgElement.classList.add('img-hover'); 
-    
         const buttonContainer = document.createElement('div');
         buttonContainer.classList.add('button-container');
-    
         if (team === 'hapoel') {
             buttonContainer.classList.add('red-button-container');
             buttonContainer.classList.add('right-of-player');
@@ -53,46 +49,37 @@ import { selectPlayerToFight,
             buttonContainer.classList.add('left-of-player');
             imgElement.classList.add('maccabi-player'); 
         }
-    
         const createButtonWithDiv = (divId, buttonId, imgSrc, clickHandler, imgClass = '') => {
             const buttonDiv = document.createElement('div');
             buttonDiv.id = divId; 
             buttonDiv.className = 'button-div';
-    
             const button = document.createElement('button');
             button.id = buttonId;
             button.className = 'addedbuttons';
-    
             const img = document.createElement('img');
             img.src = imgSrc;
             if (imgClass) {
                 imgClass.split(' ').forEach(cls => img.classList.add(cls));
             }
-    
             button.appendChild(img);
             button.addEventListener('click', clickHandler);
             buttonDiv.appendChild(button);
     
             return buttonDiv;
         };
-    
         const buttons = [
             { divId: `selectPlayerDiv-${uniqueId}`, buttonId: `selectButton-${uniqueId}`, imgSrc: 'images/swordtofight2.jpg', clickHandler: () => selectPlayerToFight(uniqueId, team), imgClass: 'select-player-class button-image' },
             { divId: `removePlayerDiv-${uniqueId}`, buttonId: `removeButton-${uniqueId}`, imgSrc: 'images/trash.png', clickHandler: () => removePlayer(uniqueId), imgClass: 'bin-class button-image' }
         ];
-    
         buttons.forEach(button => {
             buttonContainer.appendChild(createButtonWithDiv(button.divId, button.buttonId, button.imgSrc, button.clickHandler, button.imgClass));
         });
-    
         const imageContainer = document.createElement('div');
         imageContainer.classList.add('image-container');
         imageContainer.id = `container-${uniqueId}`;
         imageContainer.appendChild(imgElement);
         imageContainer.appendChild(buttonContainer);
-    
         container.appendChild(imageContainer);
-    
         if (team === 'hapoel') {
             incrementHapoel();
             result.innerHTML = `${countHapoel} out of 4 players have been added. Click on the player for further info.`;
@@ -100,16 +87,13 @@ import { selectPlayerToFight,
             incrementMaccabi();
             result.innerHTML = `${countMaccabi} out of 4 players have been added. Click on the player for further info.`;  
         }
-    
         setTimeout(() => {
             result.innerHTML = ''; 
         }, 5000);
-    
         imgElement.addEventListener('click', function () {
             toggleFunction(this, originalContainerId, targetContainerId, team);
             document.getElementById('stats').style.display = 'none';
         });
-    
         imgElement.addEventListener('mouseover', () => {
             let htmlString = '';
             let info;

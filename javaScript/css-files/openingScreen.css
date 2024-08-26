@@ -59,6 +59,7 @@ h1{
 }
 .arrow{
     height: 20em;
+    margin-left: -8em;
 }
 .pic{
     transition-duration: 1.8s;

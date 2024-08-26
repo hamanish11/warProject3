@@ -45,9 +45,9 @@ export function prepareForFight() {
         container.innerHTML = "PLEASE ADD PLAYERS TO THE CENTER OF THE ARENA, THE ARENA IS EMPTY!";
     } else if (getWon()) {
         startFireworks();
-        container.innerHTML = "CAN'T FIGHT, THE BATTLE IS OVER";
+        container.innerHTML = "CAN'T FIGHT, THE BATTLE IS OVER. RETURN TO THE HOME PAGE";
     } else if (getCurrentHTA() === 0 || getCurrentMTA() === 0) {
-        container.innerHTML = "PLAYER FROM THE OTHER SIDE IS MISSING....";
+        container.innerHTML = "THERE IS AT LEAST ONE PLAYER MISSING IN THE CURRENT PLAYER SPOT";
     } else {
         resetCounters();
         
@@ -65,7 +65,6 @@ export function prepareForFight() {
         setShouldIntervalStoppedMTA(false);
         movement('currHapoel', 'moveHapoel');
         movement('currMaccabi', 'moveMaccabi');
-        
         setTimeout(() => {
             clearInterval(getIntervalHTAHP());
             clearInterval(getIntervalMTAHP());
@@ -90,6 +89,14 @@ export function prepareForFight() {
     let imgHapoel = container1.querySelector('img');
     let container2 = document.getElementById('currMaccabi');
     let imgMaccabi = container2.querySelector('img');
+
+
+    if (!imgMaccabi || !imgHapoel) {
+        container.innerHTML = "FIGHT CANNOT PROCEED: ONE OR BOTH PLAYERS ARE MISSING.";
+        resetCounters();
+        console.log('Fight aborted: Missing one or both images.');
+        return;  
+    }
   
     if (imgMaccabi && imgHapoel) {
         if (imgMaccabi.alt > imgHapoel.alt) {

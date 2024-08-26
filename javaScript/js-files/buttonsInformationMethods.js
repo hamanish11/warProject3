@@ -16,7 +16,6 @@ export function removePlayer(imageId) {
     const result = document.getElementById('result');
     result.style.color = 'white'; 
     let info;
-
     if (imageContainer) {
         const teamHTA = imageId.slice(0, 6);
         const teamMTA = imageId.slice(0, 7);
@@ -26,9 +25,7 @@ export function removePlayer(imageId) {
         } else if (teamMTA === 'maccabi') {
             info = document.getElementById('maccabiPlayerInformation');
         }
-
         imageContainer.remove();
-
         if (info) {
             info.style.display = 'none';
         }
@@ -40,18 +37,8 @@ export function removePlayer(imageId) {
         
         if (imageId.includes('hapoel')) {
             setCountHapoel(getCountHapoel() - 1);
-            if(getCountHapoel()===0){
-                setWon(true);
-                startFireworks();
-                result.innerHTML = "BETTER LUCK NEXT TIME, MACCABI WON THE GAME....";
-            }
         } else if (imageId.includes('maccabi')) {
             setCountMaccabi(getCountMaccabi() - 1);
-            if (getCountMaccabi() === 0) {
-                setWon(true);
-                startFireworks();
-                result.innerHTML = "CONGRATS, HAPOEL WON THE GAME!";
-            }
         }
     }
     result.style.color = 'white'; 

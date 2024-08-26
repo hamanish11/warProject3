@@ -40,17 +40,17 @@ export function removePlayer(imageId) {
         
         if (imageId.includes('hapoel')) {
             setCountHapoel(getCountHapoel() - 1);
-            if(getCountHapoel()==0){
+            if(getCountHapoel()===0){
                 setWon(true);
                 startFireworks();
-                container.innerHTML = "BETTER LUCK NEXT TIME, MACCABI WON THE GAME....";
+                result.innerHTML = "BETTER LUCK NEXT TIME, MACCABI WON THE GAME....";
             }
         } else if (imageId.includes('maccabi')) {
             setCountMaccabi(getCountMaccabi() - 1);
             if (getCountMaccabi() === 0) {
                 setWon(true);
                 startFireworks();
-                container.innerHTML = "CONGRATS, HAPOEL WON THE GAME!";
+                result.innerHTML = "CONGRATS, HAPOEL WON THE GAME!";
             }
         }
     }

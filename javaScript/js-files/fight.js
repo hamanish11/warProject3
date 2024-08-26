@@ -41,7 +41,6 @@ import { startFireworks } from './fireworks.js';
 
 export function prepareForFight() {
     let container = document.getElementById('result');
-    
     if (getCurrentHTA() === 0 && getCurrentMTA() === 0 && !getWon()) {
         container.innerHTML = "PLEASE ADD PLAYERS TO THE CENTER OF THE ARENA, THE ARENA IS EMPTY!";
     } else if (getWon()) {

@@ -6,7 +6,8 @@ import {
     incrementCurrentHTA, 
     decrementCurrentHTA, 
     incrementCurrentMTA, 
-    decrementCurrentMTA, 
+    decrementCurrentMTA,
+    getWon, 
 } from './config.js';
 import { selectPlayerToFight,
     removeFromFight,
@@ -18,6 +19,13 @@ import { selectPlayerToFight,
     
         if ((countHapoel >= 4 && team === 'hapoel') || (countMaccabi >= 4 && team === 'maccabi')) {
             result.innerHTML = "CAN'T ADD MORE THAN 4 PLAYERS TO A TEAM";
+            setTimeout(() => {
+                result.innerHTML = ''; 
+            }, 5000);
+            return; 
+        }
+        else if (getWon()) {
+            result.innerHTML = "CAN'T ADD MORE PLAYERS, BATTLE IS OVER";
             setTimeout(() => {
                 result.innerHTML = ''; 
             }, 5000);

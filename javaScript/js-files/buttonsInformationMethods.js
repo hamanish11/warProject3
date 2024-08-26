@@ -7,7 +7,10 @@ import {
     setCountMaccabi,
     setCurrentHTA,
     setCurrentMTA,
+    getWon,
+    setWon
 } from './config.js';
+import { startFireworks } from './fireworks.js';
 export function removePlayer(imageId) {
     const imageContainer = document.getElementById(`container-${imageId}`);
     const result = document.getElementById('result');
@@ -37,8 +40,18 @@ export function removePlayer(imageId) {
         
         if (imageId.includes('hapoel')) {
             setCountHapoel(getCountHapoel() - 1);
+            if(getCountHapoel()==0){
+                setWon(true);
+                startFireworks();
+                container.innerHTML = "BETTER LUCK NEXT TIME, MACCABI WON THE GAME....";
+            }
         } else if (imageId.includes('maccabi')) {
             setCountMaccabi(getCountMaccabi() - 1);
+            if (getCountMaccabi() === 0) {
+                setWon(true);
+                startFireworks();
+                container.innerHTML = "CONGRATS, HAPOEL WON THE GAME!";
+            }
         }
     }
     result.style.color = 'white'; 

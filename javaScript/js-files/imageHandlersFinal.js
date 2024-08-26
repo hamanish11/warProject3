@@ -99,6 +99,7 @@ import { selectPlayerToFight,
     
         imgElement.addEventListener('click', function () {
             toggleFunction(this, originalContainerId, targetContainerId, team);
+            document.getElementById('stats').style.display = 'none';
         });
     
         imgElement.addEventListener('mouseover', () => {
@@ -294,4 +295,6 @@ import { selectPlayerToFight,
         setTimeout(() => {
             result.innerHTML = ''; 
         }, 5000);
+
+        document.getElementById('stats').style.display = 'none';
     }

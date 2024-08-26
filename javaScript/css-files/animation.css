@@ -3,7 +3,8 @@
         transform: translateX(0em);
     }
     to{
-        transform: translateX(35em);
+        /* transform: translateX(35em); */
+        transform: translateX(60em);
     }
 }
 @keyframes moveLeft{
@@ -11,7 +12,8 @@
         transform: translateX(0em);
     }
     to{
-        transform: translateX(-35em);
+        /* transform: translateX(-35em); */
+        transform: translateX(-60em);
     }
 }
 .moveHapoel{
@@ -32,7 +34,7 @@
     animation-direction: normal;
     animation-fill-mode: none;
 }
-.introduction{
+.introduction {
     background-color: white;
     color: black;
     position: absolute;
@@ -41,17 +43,19 @@
     justify-content: center;
     z-index: 10;
     height: 35em;
-    width: 70em;
+    width: 130em;
     border-radius: 10%;
     border-style: none;
-    margin-left: 37em;
+    margin-left: 30em;
     margin-top: 8em;
-}
-.introductionText{
+    padding-bottom: 15em;
+  }
+  .introductionText {
     font-size: 3em;
     font-weight: bold;
     margin-left: 1em;
-}
+    padding-top: 3em;
+  }
 .introductionText span {
     display: block; 
 }
@@ -63,21 +67,21 @@
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
-.closeButton{
-    border-radius: 40%;
+.closeButton {
+    border-radius: 50%;
     color: white;
     background-color: red;
-    height: 4em;
-    width: 8em;
+    height: 7em;
+    width: 17em;
     cursor: pointer;
     border-style: hidden;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 0.5em;
-    margin-top: 5em;
+    margin-top: 7em;
     margin-left: 30%;
     transition: 0.8s;
-}
+  }
 .closeButton:hover{
     background-color: rgb(3, 3, 3);
     color: red;

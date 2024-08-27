@@ -197,4 +197,22 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const introDiv = document.querySelector('.introduction');
+    const closeButton = document.querySelector('.closeButton');
 
+    function handleClickOutside(event) {
+        // Check if the click is outside the introduction div
+        if (!introDiv.contains(event.target) && event.target !== closeButton) {
+            introDiv.classList.add('hidden');
+        }
+    }
+
+    // Add event listener to document to detect clicks outside the introduction div
+    document.addEventListener('click', handleClickOutside);
+
+    // Optional: Close button functionality to manually hide the introduction div
+    closeButton.addEventListener('click', () => {
+        introDiv.classList.add('hidden');
+    });
+});

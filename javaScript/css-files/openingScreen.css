@@ -36,7 +36,7 @@ h1{
     background-color: white;
     border: none;
     color: black;
-    padding: 4em 78em;
+    padding: 4em 20em;
     border-radius: 5%;
     text-align: center;
     text-decoration: none;
@@ -46,21 +46,20 @@ h1{
     cursor: pointer;
     transition: 0.8s;
     margin-bottom: 6em;
-    margin-left: 18em;
+    margin-left: 14em;
     margin-right: 1.2em;
-    animation: blink 1s infinite;
     width: 50%;
   }
-
+.arrow{
+    height: 20em;
+    margin-left: -10em;
+}
 @keyframes blink {
     0% { opacity: 1; }
     50% { opacity: 0; }
     100% { opacity: 1; }
 }
-.arrow{
-    height: 20em;
-    margin-left: -8em;
-}
+
 .pic{
     transition-duration: 1.8s;
 }

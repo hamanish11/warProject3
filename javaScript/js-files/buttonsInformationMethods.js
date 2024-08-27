@@ -61,7 +61,7 @@ const createSelectFromFight = () => {
 
         if (targetContainer.childElementCount > 0 || imageContainer.parentElement.id === targetContainerId) {
             result.style.color = 'red'; 
-            result.innerHTML = 'CAN\'T ADD PLAYER: PLAYER IS ALREADY IN THE FIGHT POSITION';
+            result.innerHTML = "CAN'T ADD PLAYER: PLAYER IS ALREADY IN THE FIGHT POSITION";
             doesHappen = true;
             return; 
         }
@@ -202,16 +202,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeButton = document.querySelector('.closeButton');
 
     function handleClickOutside(event) {
-        // Check if the click is outside the introduction div
         if (!introDiv.contains(event.target) && event.target !== closeButton) {
             introDiv.classList.add('hidden');
         }
     }
 
-    // Add event listener to document to detect clicks outside the introduction div
     document.addEventListener('click', handleClickOutside);
 
-    // Optional: Close button functionality to manually hide the introduction div
     closeButton.addEventListener('click', () => {
         introDiv.classList.add('hidden');
     });

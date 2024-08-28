@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
         startFireworks();
     }
     else{
-        console.log('nope');
     }
 });
 

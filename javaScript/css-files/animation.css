@@ -131,3 +131,13 @@
 .refreshButton:hover {
     background-color: #0056b3;
 }
+.hidden {
+  display: none;
+}
+.block{
+  display: block;
+}
+
+.success {
+  color: white;
+}

@@ -65,7 +65,7 @@ canvas {
 .court{
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 127%;
     z-index: -1;
 }
 .headline{

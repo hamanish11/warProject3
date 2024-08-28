@@ -8,13 +8,9 @@ import {
   setCurrentMTA,
   setCurrentHTA,
   getCounterHTAHP,
-  setCounterHTAHP,
   getCounterMTAHP,
-  setCounterMTAHP,
   getCounterHTADamage,
-  setCounterHTADamage,
   getCounterMTADamage,
-  setCounterMTADamage,
   getIntervalHTAHP,
   setIntervalHTAHP,
   getIntervalMTAHP,
@@ -57,13 +53,11 @@ export function prepareForFight() {
 
     if (currentHTA === 0 || currentMTA === 0) {
         container.innerHTML = "THERE IS AT LEAST ONE PLAYER MISSING IN THE CURRENT PLAYER SPOT";
-        console.log('Fight aborted: Missing player.');
         return; 
     }
 
     if (!imgHapoel || !imgMaccabi) {
         container.innerHTML = "THERE IS AT LEAST ONE PLAYER MISSING IN THE CURRENT PLAYER SPOT";
-        console.log('Fight aborted: Missing one or both images.');
         return;
     }
 
@@ -114,7 +108,6 @@ export function fight() {
         resetCounters();
         setShouldIntervalStoppedHTA(true);
         setShouldIntervalStoppedMTA(true);
-        console.log('Fight aborted: Missing one or both images.');
         return;  
     }
 
@@ -154,10 +147,7 @@ export function fight() {
     setShouldIntervalStoppedHTA(true);
     setShouldIntervalStoppedMTA(true);
 
-    console.log('HTA HP Reset:', getCounterHTAHP());
-    console.log('MTA HP Reset:', getCounterMTAHP());
-    console.log('HTA Damage Reset:', getCounterHTADamage());
-    console.log('MTA Damage Reset:', getCounterMTADamage());
+    
 }
 
 

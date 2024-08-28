@@ -7,14 +7,18 @@ import {
     setCountMaccabi,
     setCurrentHTA,
     setCurrentMTA,
-    getWon,
-    setWon
 } from './config.js';
-import { startFireworks } from './fireworks.js';
+
+
+
+
+
 export function removePlayer(imageId) {
     const imageContainer = document.getElementById(`container-${imageId}`);
     const result = document.getElementById('result');
-    result.style.color = 'white'; 
+    result.classList.remove('error', 'success');
+    result.classList.add('success');
+    
     let info;
     if (imageContainer) {
         const teamHTA = imageId.slice(0, 6);
@@ -27,9 +31,8 @@ export function removePlayer(imageId) {
         }
         imageContainer.remove();
         if (info) {
-            info.style.display = 'none';
+            info.classList.add('hidden');
         }
-        result.style.color = 'green'; 
         result.innerHTML = 'Player deleted successfully'; 
         setTimeout(() => {
             result.innerHTML = ''; 
@@ -41,7 +44,7 @@ export function removePlayer(imageId) {
             setCountMaccabi(getCountMaccabi() - 1);
         }
     }
-    result.style.color = 'white'; 
+    result.classList.remove('error', 'success');
 }
 
 
@@ -60,15 +63,17 @@ const createSelectFromFight = () => {
         }
 
         if (targetContainer.childElementCount > 0 || imageContainer.parentElement.id === targetContainerId) {
-            result.style.color = 'red'; 
             result.innerHTML = "CAN'T ADD PLAYER: PLAYER IS ALREADY IN THE FIGHT POSITION";
+            result.classList.remove('success');
+            result.classList.add('error');
             doesHappen = true;
             return; 
         }
 
         targetContainer.appendChild(imageContainer);
         doesHappen = true;
-        result.style.color = 'white'; 
+        result.classList.remove('error');
+        result.classList.add('success');
         if (team === 'hapoel') {
             setCurrentHTA(getCurrentHTA() + 1);
             result.innerHTML = 'Player added to fight';
@@ -125,8 +130,9 @@ const createRemoveFromFight = () => {
         }
 
         if (!imageContainer || imageContainer.parentElement.id !== targetContainerId) {
-            result.style.color = 'red'; 
             result.innerHTML = 'Error: Player is not in the fight spot.';
+            result.classList.remove('success');
+            result.classList.add('error');
             doesHappen = true;
             return;
         }
@@ -165,7 +171,8 @@ const createRemoveFromFight = () => {
             buttonContainer.appendChild(selectButtonDiv);
         }
 
-        result.style.color = 'white'; 
+        result.classList.remove('error');
+        result.classList.add('success');
         doesHappen = true; 
 
         setTimeout(() => {
@@ -176,26 +183,18 @@ const createRemoveFromFight = () => {
 
 export const removeFromFight = createRemoveFromFight();
 
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     var closeButton = document.querySelector('.closeButton');
     var introductionDiv = document.querySelector('.introduction');
 
     if (closeButton && introductionDiv) {
         closeButton.addEventListener('click', function() {
-            introductionDiv.style.display = 'none';
+            introductionDiv.classList.add('hidden');
         });
     } else {
         console.error('Required elements not found.');
     }
 });
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const introDiv = document.querySelector('.introduction');
@@ -213,3 +212,4 @@ document.addEventListener('DOMContentLoaded', () => {
         introDiv.classList.add('hidden');
     });
 });
+

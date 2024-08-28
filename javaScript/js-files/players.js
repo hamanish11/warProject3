@@ -1,23 +1,71 @@
 export const hapoelPlayers = [
-    { name: "ginat", rating: 88, img: 'images/ginat5.png', hoverText: `
-            <strong>Tomar Ginat</strong><br>
-            <span class="rating">Rating: 88</span><br>
+    { 
+        name: "Tomer Ginat", 
+        rating: 88, 
+        img: 'images/ginat5.png', 
+        additionalImg: 'images/ginat3 info.png', 
+        hoverText: `
             Tomer Ginat (born November 7, 1994) is an Israeli professional basketball player for Hapoel Tel Aviv of the Israeli Basketball Premier League. 
-            Standing at <em>6 ft 8 in (2.03 m)</em>, he primarily plays at the <strong>power forward</strong> position. 
+            Standing at <em>6 ft 8 in (2.03 m)</em>, he primarily plays at the power forward position. 
             Ginat was named the <span class="highlight">Israeli League Rising Star</span> in 2017.
-        ` },
-    { name: "timor", rating: 83, img: 'images/timor info 2.png', hoverText: 'Bar Timor Rating : 83 Bar Timor (born March 2, 1992) is an Israeli professional basketball player, who plays for Hapoel Tel Aviv of the Israeli Basketball Premier League and the Israeli national team. click on the player to pick him' },
-    { name: "munford", rating: 87, img: 'images/munford2.png', hoverText: 'Xavier Munford Rating : 87 Xavier Tyler Jerome Munford (born June 1, 1992) is an American professional basketball player for Hapoel Tel Aviv of the Israeli Basketball Premier League. He played two seasons of college basketball for the Rhode Island Rams. click on the player to pick him'}
+        ` 
+    },
+    { 
+        name: "Bar Timor", 
+        rating: 83, 
+        img: 'images/timor2.png', 
+        additionalImg: 'images/timor info 2.png',
+        hoverText: `
+            Bar Timor (born April 22, 1990) is an Israeli professional basketball player for Hapoel Tel Aviv of the Israeli Basketball Premier League. 
+            Standing at <em>6 ft 2 in (1.88 m)</em>, he primarily plays at the point guard position. 
+            Timor was named the <span class="highlight">Israeli League Defensive Player of the Year</span> in 2018.
+        ` 
+    },
+    { 
+        name: "Xavier Munford", 
+        rating: 87, 
+        img: 'images/munford2.png', 
+        additionalImg: 'images/munford info 2.png', 
+        hoverText: `
+            Xavier Munford (born September 1, 1992) is an American professional basketball player for Hapoel Tel Aviv of the Israeli Basketball Premier League. 
+            Standing at <em>6 ft 3 in (1.91 m)</em>, he primarily plays at the guard position. 
+            Munford was named the <span class="highlight">Israeli League Most Improved Player</span> in 2021.
+        ` 
+    }
 ];
-
-
-
-
 
 export const maccabiPlayers = [
-    { name: "dibartolomeo", rating: 82, img: 'images/german2.png', hoverText: 'Jhon Dibartolomeo Rating : 82 John DiBartolomeo (born June 20, 1991) is an American-Israeli professional basketball player and the team captain for Maccabi Tel Aviv of the Israeli Basketball Premier League and the EuroLeague. click on the player to pick him' },
-    { name: "blatt", rating: 85, img: 'images/blatt2.png', hoverText: 'Tamir blatt RATING : 85 Tamir Blatt (born May 4, 1997) is an Israeli professional basketball player for Maccabi Tel Aviv of the Israeli Basketball Premier League and the EuroLeague. He is the son of former basketball player and coach David Blatt. In the 2020-2021 season he led the Israel Basketball Premier League in assists per game. click on the player to pick him' },
-    { name: "rivero", rating: 86, img: 'images/rivero2.png', hoverText: 'Jasiel Rivero Rating : 86 Jasiel "Papi" Rivero Fernández (born October 31, 1993) is a Cuban professional basketball player for Maccabi Tel Aviv of the Israeli Basketball Premier League and the EuroLeague. click on the player to pick him' }
+    { 
+        name: "Jhon Dibartolomeo", 
+        rating: 82, 
+        img: 'images/german2.png', 
+        additionalImg: 'images/dibartolomeo info 2.png',
+        hoverText: `
+            John DiBartolomeo (born March 8, 1990) is an American professional basketball player for Maccabi Tel Aviv of the Israeli Basketball Premier League. 
+            Standing at <em>5 ft 11 in (1.81 m)</em>, he primarily plays at the guard position. 
+            DiBartolomeo was named the <span class="highlight">Israeli League Champion</span> in 2022.
+        ` 
+    },
+    { 
+        name: "Tamir Blatt", 
+        rating: 85, 
+        img: 'images/blatt2.png', 
+        additionalImg: 'images/blatt info 2.png',
+        hoverText: `
+            Tamir Blatt (born March 12, 1999) is an Israeli professional basketball player for Maccabi Tel Aviv of the Israeli Basketball Premier League. 
+            Standing at <em>6 ft 0 in (1.83 m)</em>, he primarily plays at the point guard position. 
+            Blatt was named the <span class="highlight">Israeli League Best Young Player</span> in 2020.
+        ` 
+    },
+    { 
+        name: "Jasiel rivero", 
+        rating: 86, 
+        img: 'images/rivero2.png', 
+        additionalImg: 'images/rivero info 2.png',
+        hoverText: `
+            Jasiel Rivero (born June 6, 1993) is a Cuban professional basketball player for Maccabi Tel Aviv of the Israeli Basketball Premier League. 
+            Standing at <em>6 ft 8 in (2.03 m)</em>, he primarily plays at the power forward position. 
+            Rivero was named the <span class="highlight">Israeli League Import of the Year</span> in 2022.
+        ` 
+    }
 ];
-
-
